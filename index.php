@@ -8,12 +8,11 @@
 			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
 			<li class="divider" data-text="main">Main</li>
 			<li>
-				<a href="#"><i class='bx bxs-inbox icon' ></i> Elements <i class='bx bx-chevron-right icon-right' ></i></a>
+				<a href="#"><i class='bx bxs-inbox icon' ></i> Ubicaciones <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="#">Alert</a></li>
-					<li><a href="#">Badges</a></li>
-					<li><a href="#">Breadcrumbs</a></li>
-					<li><a href="#">Button</a></li>
+					<li><a class="enlace" data-urldestino="view/Countries/maincountry.php" href="#">Paises</a></li>
+					<li><a class="enlace" data-urldestino="view/Regions/mainregion.php" href="#">Regiones</a></li>
+					<li><a class="enlace" data-urldestino="view/Cities/maincity.php" href="#">Ciudades</a></li>
 				</ul>
 			</li>
 			<li><a href="#"><i class='bx bxs-chart icon' ></i> Charts</a></li>
@@ -56,7 +55,11 @@
 
 		<!-- MAIN -->
 		<main>
+            <div class="container">
+                <div class="container-content mt-2" id="contentphp">
 
+                </div>
+            </div>
 		</main>
 		<!-- MAIN -->
 	</section>
