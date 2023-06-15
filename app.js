@@ -1,8 +1,9 @@
 // Obtén referencias a los enlaces y al contenedor
 const enlaces = document.querySelectorAll('.enlace');
 const contenedor = document.getElementById('contentphp');
+var head = document.head;
 // Agrega un controlador de eventos a cada enlace
-enlaces.forEach((val,id) =>{
+enlaces.forEach((val, id) => {
     val.removeEventListener('click', cargarPagina);
     val.addEventListener('click', cargarPagina);
 });
@@ -14,25 +15,45 @@ function cargarPagina(e) {
 
     // Realiza la solicitud HTTP a la página PHP utilizando fetch
     fetch(url)
-        .then(function(response) {
+        .then(function (response) {
             if (response.ok) {
                 return response.text(); // Convierte la respuesta a texto
             }
             throw new Error('Error en la solicitud HTTP');
         })
-        .then(function(data) {
-           
+        .then(function (data) {
+
             // Actualiza el contenido de la página actual con la respuesta de la página PHP
             let html = new DOMParser().parseFromString(data, 'text/html');
-            let js  = document.createElement('script');
-            if(html.head.children.length>0){
-                js.src = html.head.children[0].src;
-                js.defer;
-                document.head.appendChild(js);
+
+            let htmlCollecion = new Array(...html.head.children);
+            htmlCollecion.filter((res) => {
+                let js = document.createElement('script');
+
+                if (js) {
+                    // Elimina el script del <head>
+                    js.remove();
+
+                    // Verifica que el script se haya eliminado correctamente
+                    var isScriptRemoved = !html.contains(js);
+                    if (isScriptRemoved) {
+                        console.log('El script se ha eliminado correctamente.');
+                    } else {
+                        console.log('No se pudo eliminar el script.');
+                    }
+                } else {
+                    console.log('El script no se encontró en el <head>.');
                 }
+
+                js.src = res.src;
+                js.defer = undefined;
+                document.head.appendChild(js);
+            })
+
+
             contenedor.append(...html.body.children);
         })
-        .catch(function(error) {
+        .catch(function (error) {
             console.log('Error: ' + error.message);
         });
 }

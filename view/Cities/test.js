@@ -1,6 +1,6 @@
 (function() {
     const encabezado = document.querySelector('h1');
-    alert("fffff");
+    alert("puticooo");
     document.addEventListener('DOMContentLoaded', (e) => {
     });
 })();
