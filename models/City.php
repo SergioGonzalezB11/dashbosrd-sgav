@@ -16,7 +16,7 @@
             $dataBd = $this->sanitizarAttributos();
             $valCols = $delimiter . join(',:',array_keys($data));
             $cols = join(',',array_keys($data));
-            $sql = "INSERT INTO countries ($cols) VALUES ($valCols)";
+            $sql = "INSERT INTO cities ($cols) VALUES ($valCols)";
             $stmt= self::$conn->prepare($sql);
             try {
                 $stmt->execute($data);
