@@ -21,8 +21,9 @@
             try {
                 $stmt->execute($data);
                 $response=[[
-                    'id_country' => self::$conn->lastInsertId(),
-                    'name_country' => $data['name_country']
+                    'id_city' => self::$conn->lastInsertId(),
+                    'name_city' => $data['name_country'],
+                    'id_region' => $data['id_region']
                 ]];
             }catch(\PDOException $e) {
                 return $sql . "<br>" . $e->getMessage();
@@ -36,7 +37,7 @@
         public function atributos(){
             $atributos = [];
             foreach (self::$columnsTbl as $columna){
-                if($columna === 'id_country') continue;
+                if($columna === 'id_city') continue;
                 $atributos [$columna]=$this->$columna;
              }
              return $atributos;
