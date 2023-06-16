@@ -7,7 +7,6 @@
         val.removeEventListener('click', cargarPagina);
         val.addEventListener('click', cargarPagina);
     });
-    
     // Función para cargar la página PHP
     function cargarPagina(e) {
         contenedor.innerHTML = '';
@@ -44,10 +43,9 @@
                     } else {
                         console.log('El script no se encontró en el <head>.');
                     }
-    
                     js.src = res.src;
                     js.defer = undefined;
-                    document.head.appendChild(js);
+                    document.body.appendChild(js);
                 })
     
     

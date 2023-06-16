@@ -1,6 +1,7 @@
-<?php 
+<?php
     include_once __DIR__.'/Templates/header.php';
 ?>
+
     	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="#" class="brand"><i class='bx bxs-smile icon'></i> AdminSite</a>

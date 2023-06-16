@@ -30,7 +30,7 @@ function cargarPagina(e) {
             htmlCollecion.filter((res) => {
                 let js = document.createElement('script');
 
-                if (js) {
+                /*if (js) {
                     // Elimina el script del <head>
                     js.remove();
 
@@ -43,7 +43,7 @@ function cargarPagina(e) {
                     }
                 } else {
                     console.log('El script no se encontró en el <head>.');
-                }
+                }*/
 
                 js.src = res.src;
                 js.defer = undefined;
