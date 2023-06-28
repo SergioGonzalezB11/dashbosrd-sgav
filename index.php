@@ -2,7 +2,8 @@
     include_once __DIR__.'/Templates/header.php';
 ?>
 
-    	<!-- SIDEBAR -->
+    <!-- SIDEBAR -->
+
 	<section id="sidebar">
 		<a href="#" class="brand"><i class='bx bxs-smile icon'></i> AdminSite</a>
 		<ul class="side-menu">
